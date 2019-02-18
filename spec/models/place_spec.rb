@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Place, type: :model do
   let(:place) { build(:place, :test_place ) }
-
   describe Place, 'factory' do
     it "has a valid factory" do
       expect(place).to be_valid

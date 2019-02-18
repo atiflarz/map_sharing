@@ -29,6 +29,12 @@ After cloning the application follow the following steps
 
 * How to run the test suite
 
+1. To test all the spec just use the command `rspec`
+
+2. To test specfic controller use the command 'rspec spec/controllers/controller_name'
+
+3. To test specfic model use the command 'rspec spec/models/model_name'
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions

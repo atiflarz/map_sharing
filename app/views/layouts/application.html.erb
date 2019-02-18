@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MapSharing</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key='+ENV['GOOGLE_API_KEY'] %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="main_container">
+    <div class="text-right">
+      <% if user_signed_in? %>
+        <%= link_to('Home', root_path) %> |
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <% end %>
+    </div>
+    <%= render 'layouts/toastr' %>
+    <%= yield %>
+  </div>
+</body>
+</html>

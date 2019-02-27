@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
     @place.place_recipients.build
     @users = User.where.not(id: current_user.id)
     place_ids = current_user.place_recipients.pluck(:place_id)
-    @places = Place.where("user_id =? or id =?", current_user.id, place_ids).select(:latitude, :longitude)
+    @places = Place.where("user_id =? or id IN (?)", current_user.id, place_ids).select(:latitude, :longitude)
   end
 
   def create
